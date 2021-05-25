@@ -14,9 +14,16 @@ body{
     flex-grow: 1;
 }
 
+.secondary_content{
+    background-image:url('/img/weather_bckg.jpg');
+    background-size: cover;
+    background-size: contain;
+}
+
 footer{
     background:pink;
     margin-top: 16px;
+    margin-bottom: 16px;
     padding: 16px 0;
     border-top:1px solid black;
 }
