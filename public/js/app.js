@@ -12,6 +12,7 @@ const weatherform = document.querySelector("form");
 const search = document.querySelector("input");
 const message_1 = document.querySelector("#message-1");
 const message_2 = document.querySelector("#message-2");
+var weather_icons = document.querySelector("#weather_icon");
 
 weatherform.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -20,6 +21,7 @@ weatherform.addEventListener("submit", (e) => {
 
   message_1.textContent = "Loading....";
   message_2.textContent = "";
+  weather_icons.src="";
 
   fetch("/weather?address=" + location).then(
     (response) => {
@@ -29,6 +31,7 @@ weatherform.addEventListener("submit", (e) => {
         }
         message_1.textContent = data.location;
         message_2.textContent = data.forecast;
+        weather_icons.src = data.weather_icons;
       });
     }
   );
