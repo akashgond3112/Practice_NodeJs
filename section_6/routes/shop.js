@@ -13,7 +13,15 @@ router.get("/", (req, res, next) => {
 
   // using pug
   const products = adminData.products;
-  res.render("shop", { prods: products, pageTitle: "shop", path: "/" });
+  res.render("shop", {
+    prods: products,
+    pageTitle: "shop",
+    hasProducts: products.length > 0,
+    path: "/",
+    // layout: false,
+    activeShop: true,
+    productCSS: true,
+  });
 });
 
 module.exports = router;
