@@ -2,21 +2,24 @@ const path = require("path");
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const expressHbs = require("express-handlebars");
+// const expressHbs = require("express-handlebars");
 
 const app = express();
 
-app.engine("hbs", expressHbs.engine({
+/* app.engine("hbs", expressHbs.engine({
     extname: 'hbs',
     layoutsDir: 'views/layouts/',
     defaultLayout: 'main-layout'
-}));
+})); */
 
 //pug
 // app.set("view engine", "pug");
 
 //handlebars
-app.set("view engine", "hbs");
+// app.set("view engine", "hbs");
+
+//ejs
+app.set("view engine", "ejs")
 
 app.set("views", "views");
 
